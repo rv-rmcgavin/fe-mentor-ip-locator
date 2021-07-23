@@ -87,6 +87,11 @@ const GlobalStyle = createGlobalStyle`
 
       /* END RESET */
 
+      /* Setting a custom property here for all the border radius settings will be helpful */
+      :root {
+        --br: 16px;
+      }
+
       html,
       body {
         font-family: "Rubik", sans-serif;
@@ -106,6 +111,10 @@ const GlobalStyle = createGlobalStyle`
 
       main {
         height: 100%;
+      }
+      
+      h1 {
+        color ${colors.white};
       }
     `;
   }}

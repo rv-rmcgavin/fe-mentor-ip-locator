@@ -51,6 +51,22 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Based off my learnings and notes on the early process of my [Tip Splitter](https://github.com/rv-rmcgavin/fe-mentor-tip-calculator) project for [frontendmentor.io](https://frontendmentor.io), I created some base `.tsx` and `.ts` files and a bash script to get most of the standard work set up quickly. 
 - My [setup.sh](https://gist.github.com/rv-rmcgavin/7ec4e5b3dcc0dbda30c343e5fcfdff3f) shell script. It can be pretty easily adapted to any flow.
 - Set up theme, fonts, and any other global styles based on [style-guide.md](./style-guide.md)
+- I've outlined Inputs & Outputs below separately. Now knowing those, I think the best approach will be a mock up to mostly achieve the mobile design.
+
+
+
+
+- Inputs & Outputs
+  - Input: 
+    - ip address
+      - This can be typed in an input by the user
+      - This should be automatically taken from the user upon load. I intend to solve this last.
+  - Output
+    - IP Address
+    - Location
+    - Timezone
+    - ISP Name
+    - A map
 
 ### Built with
 
