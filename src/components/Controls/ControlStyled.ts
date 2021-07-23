@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components';
+// TODO: Maybe clean this component up to not use colors or theme.
 
 const ControlStyled = styled.div`
   ${({ theme }: { theme: DefaultTheme }) => {

@@ -1,15 +1,14 @@
-import ControlStyled from "./ControlStyled";
-import Form from "../Form";
-import Display from "../Display";
+import React from 'react';
+import ControlStyled from './ControlStyled';
+import Form from '../Form';
+import Display from '../Display';
 
-const Controls = () => {
-  return (
-    <ControlStyled>
-      <h1>IP Address Tracker</h1>
-      <Form />
-      <Display />
-    </ControlStyled>
-  )
-};
+const Controls = () => (
+  <ControlStyled>
+    <h1>IP Address Tracker</h1>
+    <Form />
+    <Display />
+  </ControlStyled>
+);
 
 export default Controls;
