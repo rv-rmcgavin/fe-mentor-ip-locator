@@ -52,7 +52,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - My [setup.sh](https://gist.github.com/rv-rmcgavin/7ec4e5b3dcc0dbda30c343e5fcfdff3f) shell script. It can be pretty easily adapted to any flow.
 - Set up theme, fonts, and any other global styles based on [style-guide.md](./style-guide.md)
 - I've outlined Inputs & Outputs below separately. Now knowing those, I think the best approach will be a mock up to mostly achieve the mobile design.
-
+- Mocked up basic mobile design with dummy data.
+- Small aside. I want to set up airbnb eslint config here.
+- Get the ip address from the form and send the request to the API.
 
 
 
