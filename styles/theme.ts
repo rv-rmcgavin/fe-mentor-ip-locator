@@ -2,10 +2,11 @@ import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: 'hsl(172, 67%, 45%)', // strong cyan
     neutral: {
-      500: 'hsl(184, 14%, 56%)',
+      700: 'hsl(0, 0%, 17%)',
+      500: 'hsl(0, 0%, 59%)',
     },
+    black: 'hsl(0, 0%, 0%)',
     white: 'hsl(0, 0%, 100%)',
   },
   breakpoint: `(min-width: 900px)`

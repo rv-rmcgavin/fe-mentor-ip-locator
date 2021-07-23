@@ -89,8 +89,8 @@ const GlobalStyle = createGlobalStyle`
 
       html,
       body {
-        font-family: sans-serif;
-        /* add font size */
+        font-family: "Rubik", sans-serif;
+        font-size: 1.125rem; // 18px base
         height: 100%;
         margin: 0;
         padding: 0;

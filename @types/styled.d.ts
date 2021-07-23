@@ -2,12 +2,13 @@
 import 'styled-components';
 
 interface Neutral {
+  700: string;
   500: string;
 }
 
 interface Colors {
-  primary: string;
   neutral: Neutral;
+  black: string;
   white: string;
 }
 
