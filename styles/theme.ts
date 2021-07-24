@@ -8,6 +8,7 @@ const theme: DefaultTheme = {
       300: 'hsl(0, 0%, 89%)',
     },
     black: 'hsl(0, 0%, 0%)',
+    blackActive: 'hsl(0, 0%, 25%)',
     white: 'hsl(0, 0%, 100%)',
   },
   breakpoint: '(min-width: 900px)',

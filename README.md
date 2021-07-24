@@ -62,10 +62,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
   - Turned out to be much easier to get the user's ip address by simply sending it to the geo ipify endpoint without an ip. 
 - In [/src/components/Form/index.tsx](./src/components/Form/index.tsx) I got a linting error because I needed to put a function I wrote as a dependency of a `useEffect(() => {})`. It led down this whole path of using `useCallback` on the function and adding another dependency array. I did not at all follow why the linter had me do this, and what impact it had. I want to learn more about that.
 - Desktop styles
-
+- Active states
 
 TODO:
-- Active states
+- validate data for either ip address or domain to be accepted.
 - I want to generate some sort of auto docs since I have TS. What can it do?
 
 ### Built with
@@ -90,15 +90,9 @@ const Map = dynamic(
   );
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I'm thinking I might try Svelte. Start with some of the easier projects on [frontendmentor](https://frontendmentor.io) to get a feel for just writing in that style.
 
 ### Useful resources
 

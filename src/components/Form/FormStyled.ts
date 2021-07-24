@@ -12,6 +12,7 @@ const FormStyled = styled.div`
       .ip-input {
         border: none;
         border-radius: var(--br) 0 0 var(--br);
+        cursor: pointer;
         font-size: 1rem;
         max-width: 498px;
         outline-color: ${colors.neutral['500']};
@@ -23,8 +24,12 @@ const FormStyled = styled.div`
         background-color: ${colors.black};
         border: none;
         border-radius: 0 var(--br) var(--br) 0;
+        cursor: pointer;
         padding: 13px 23.5px;
         height: 100%;
+        &:active {
+          background-color: ${colors.blackActive};
+        }
       }
     `;
   }}

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const ControlStyled = styled.div`
   background-image: url('/pattern-bg.png');
+  background-size: cover;
   min-height: 300px;
   position: relative;
   padding: 32px 24px;

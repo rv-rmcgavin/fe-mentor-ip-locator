@@ -10,6 +10,7 @@ interface Neutral {
 interface Colors {
   neutral: Neutral;
   black: string;
+  blackActive: string;
   white: string;
 }
 
