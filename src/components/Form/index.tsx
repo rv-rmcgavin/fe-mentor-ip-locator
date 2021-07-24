@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import FormStyled from './FormStyled';
 
@@ -9,6 +9,7 @@ const Form = ({ setIpData, setCoords }: {
   }[]>>,
   setCoords: React.Dispatch<React.SetStateAction<number[]>>
 }) => {
+  const [on, setToggle] = useState(false);
   const [ipAddress, setIpAddress] = useState('');
   const API_KEY: string | undefined = process.env.NEXT_PUBLIC_IPIFY_API_KEY;
   const URL: string = `https://geo.ipify.org/api/v1?apiKey=${API_KEY}&ipAddress=${ipAddress}`;
@@ -19,10 +20,9 @@ const Form = ({ setIpData, setCoords }: {
     // TODO: validate data.
     setIpAddress(event.target.value);
   };
-
   // handleRequest will send a `GET` request with with ipAddress as a paramater to get
   // geolocation data for that IP.
-  const handleRequest = async () => {
+  const handleRequest = useCallback(async () => {
     try {
       const response: AxiosResponse<any> = await axios.get(URL);
       const { ip, location, isp } = response.data;
@@ -47,12 +47,20 @@ const Form = ({ setIpData, setCoords }: {
           value: isp,
         },
       ];
+      setIpAddress(ip);
       setIpData(displayData);
       setCoords([lat, lng]);
     } catch (error) {
       console.error(error); // eslint-disable-line no-console
     }
-  };
+  }, [URL, setCoords, setIpData]);
+
+  useEffect(() => {
+    if (!on) {
+      setToggle(true);
+      handleRequest();
+    }
+  }, [on, handleRequest]);
 
   return (
     <FormStyled>

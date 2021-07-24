@@ -9,7 +9,7 @@ const Display = ({ ipData }: {
 }) => (
   <DisplayStyled>
     {ipData.map((data) => (
-      <div key={data.label}>
+      <div className="item-container" key={data.label}>
         <div className="label">{data.label}</div>
         <div className="value">{data.value}</div>
       </div>

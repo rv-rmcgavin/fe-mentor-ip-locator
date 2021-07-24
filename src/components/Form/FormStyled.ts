@@ -13,8 +13,10 @@ const FormStyled = styled.div`
         border: none;
         border-radius: var(--br) 0 0 var(--br);
         font-size: 1rem;
+        max-width: 498px;
         outline-color: ${colors.neutral['500']};
         padding: 15px 24px;
+        width: 100%;
       }
 
       .submit {

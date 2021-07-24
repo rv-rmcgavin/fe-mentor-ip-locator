@@ -4,6 +4,7 @@ import 'styled-components';
 interface Neutral {
   700: string;
   500: string;
+  300: string;
 }
 
 interface Colors {

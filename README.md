@@ -57,11 +57,14 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Get the ip address from the input, make the get request to ipify, receive data, set it up how we want to display it, and...display it!
 - Let's get leaflet working.
 - Leaflet is working great! Had a great learning about dynamic imports to check out further below.
-
-TODO:
 - Get the user's ip address, and make the api automatically.
   - Be sure to do this only once.
+  - Turned out to be much easier to get the user's ip address by simply sending it to the geo ipify endpoint without an ip. 
+- In [/src/components/Form/index.tsx](./src/components/Form/index.tsx) I got a linting error because I needed to put a function I wrote as a dependency of a `useEffect(() => {})`. It led down this whole path of using `useCallback` on the function and adding another dependency array. I did not at all follow why the linter had me do this, and what impact it had. I want to learn more about that.
 - Desktop styles
+
+
+TODO:
 - Active states
 - I want to generate some sort of auto docs since I have TS. What can it do?
 
@@ -74,9 +77,6 @@ TODO:
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
 Dynamic rendering to solve the classic next.js problem of `window is not defined`.

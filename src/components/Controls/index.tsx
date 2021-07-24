@@ -5,6 +5,7 @@ import Display from '../Display';
 
 const Controls = ({ setCoords }: { setCoords: React.Dispatch<React.SetStateAction<number[]>> }) => {
   const [ipData, setIpData] = useState([{ label: '', value: '' }]);
+
   return (
     <ControlStyled>
       <h1>IP Address Tracker</h1>
