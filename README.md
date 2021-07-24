@@ -53,10 +53,11 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Set up theme, fonts, and any other global styles based on [style-guide.md](./style-guide.md)
 - I've outlined Inputs & Outputs below separately. Now knowing those, I think the best approach will be a mock up to mostly achieve the mobile design.
 - Mocked up basic mobile design with dummy data.
-- Small aside. I want to set up airbnb eslint config here.
-- Get the ip address from the form and send the request to the API.
+- Small aside. I want to set up airbnb eslint config here...I did it! It wasn't that hard. Go figure.
+- Get the ip address from the input, make the get request to ipify, receive data, set it up how we want to display it, and...display it!
 
-
+TODO:
+- I want to generate some sort of auto docs since I have TS. What can it do?
 
 - Inputs & Outputs
   - Input: 
