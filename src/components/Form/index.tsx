@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import FormStyled from './FormStyled';
 
-const Form = ({ setIpData }: {
+const Form = ({ setIpData, setCoords }: {
   setIpData: React.Dispatch<React.SetStateAction<{
     label: string;
     value: string;
-  }[]>>
+  }[]>>,
+  setCoords: React.Dispatch<React.SetStateAction<number[]>>
 }) => {
   const [ipAddress, setIpAddress] = useState('');
   const API_KEY: string | undefined = process.env.NEXT_PUBLIC_IPIFY_API_KEY;
@@ -26,7 +27,7 @@ const Form = ({ setIpData }: {
       const response: AxiosResponse<any> = await axios.get(URL);
       const { ip, location, isp } = response.data;
       const {
-        city, region, postalCode, timezone,
+        city, region, postalCode, timezone, lat, lng,
       } = location;
       const displayData: { label: string, value: string }[] = [
         {
@@ -47,6 +48,7 @@ const Form = ({ setIpData }: {
         },
       ];
       setIpData(displayData);
+      setCoords([lat, lng]);
     } catch (error) {
       console.error(error); // eslint-disable-line no-console
     }

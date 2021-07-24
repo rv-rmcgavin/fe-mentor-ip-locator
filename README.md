@@ -55,21 +55,15 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Mocked up basic mobile design with dummy data.
 - Small aside. I want to set up airbnb eslint config here...I did it! It wasn't that hard. Go figure.
 - Get the ip address from the input, make the get request to ipify, receive data, set it up how we want to display it, and...display it!
+- Let's get leaflet working.
+- Leaflet is working great! Had a great learning about dynamic imports to check out further below.
 
 TODO:
+- Get the user's ip address, and make the api automatically.
+  - Be sure to do this only once.
+- Desktop styles
+- Active states
 - I want to generate some sort of auto docs since I have TS. What can it do?
-
-- Inputs & Outputs
-  - Input: 
-    - ip address
-      - This can be typed in an input by the user
-      - This should be automatically taken from the user upon load. I intend to solve this last.
-  - Output
-    - IP Address
-    - Location
-    - Timezone
-    - ISP Name
-    - A map
 
 ### Built with
 
@@ -85,22 +79,15 @@ TODO:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Dynamic rendering to solve the classic next.js problem of `window is not defined`.
 
-To see how you can add code snippets, see below:
+```tsx
+import dynamic from 'next/dynamic';
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const Map = dynamic(
+    () => import('../src/components/Map/index'), // replace '../src/components/Map/index' with your component's location
+    { ssr: false }, // This line is important. It's what prevents server-side render
+  );
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
@@ -115,18 +102,12 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
+- [SO: Leaflet with next.js?](https://stackoverflow.com/questions/57704196/leaflet-with-next-js) - I had a problem with leaflet loading and crashing because the window was not loaded yet. A fairly common problem with next.js. Until now I had been able to solve it by checking for the `window` object or switching a `bool` in a `useEffect()`. The answer that isn't the accepted answer, but rather the one by FlippingBinary, utilizing next's dynamic imports got me through the most difficult challenge of this project.
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [Rick McGavin](https://rickmcgavin.github.io)
+- Frontend Mentor - [@rickMcGavin](https://www.frontendmentor.io/profile/rickMcGavin)
+- Twitter - [@rickmcgavin](https://www.twitter.com/rickmcgavin)
 
 ## Acknowledgments
 

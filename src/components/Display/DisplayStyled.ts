@@ -11,6 +11,7 @@ const DisplayStyled = styled.div`
       position: absolute;
       text-align: center;
       width: calc(100% - 48px);
+      z-index: 500; // the map from leaflet has a 400 z-index.
 
       & > div:not(:last-of-type) {
         margin-bottom: 24px;
