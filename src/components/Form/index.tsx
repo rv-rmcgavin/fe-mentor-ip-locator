@@ -51,8 +51,8 @@ const Form = ({ setIpData, setCoords }: {
 
   const isFormValid = (): void => {
     if (!formValue.match(IP_REGEX) && !formValue.match(DOMAIN_REGEX)) {
-      console.error('form invalid');
-      console.log(formValue);
+      console.error('form invalid'); // eslint-disable-line no-console
+      console.log(formValue); // eslint-disable-line no-console
       return;
     }
     reset();
