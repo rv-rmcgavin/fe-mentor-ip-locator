@@ -63,9 +63,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - In [/src/components/Form/index.tsx](./src/components/Form/index.tsx) I got a linting error because I needed to put a function I wrote as a dependency of a `useEffect(() => {})`. It led down this whole path of using `useCallback` on the function and adding another dependency array. I did not at all follow why the linter had me do this, and what impact it had. I want to learn more about that.
 - Desktop styles
 - Active states
+- validate data for either ip address or domain to be accepted.
 
 TODO:
-- validate data for either ip address or domain to be accepted.
+- Clean up the code quite a bit. Create hooks for the components that needs their functionality separated out.
 - I want to generate some sort of auto docs since I have TS. What can it do?
 
 ### Built with
@@ -89,6 +90,12 @@ const Map = dynamic(
     { ssr: false }, // This line is important. It's what prevents server-side render
   );
 ```
+In [/src/components/Form/index.tsx](./src/components/Form/index.tsx), I used a pattern I've had to implement a couple times before. Basically this pattern develops out of a need to perform certain state updates, and ensure that those state updates are complete before running the next function. In my experience, it also seems common to creep up when you are updating data relied upon to make an API call. 
+
+Basically, it's a callback pattern, but at the end of it, the function to make the API call is declared later than you want to use it. What I've done in the past, and what I did here was set up a `useEffect()` that would run the API call at the end of the "callback chain" based on updating a boolean piece of state set up just to control whether this api call is made or not. 
+
+While this pattern works, I hate it. I want to look in to better ways to solve this.
+
 
 ### Continued development
 

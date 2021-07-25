@@ -18,6 +18,10 @@ const FormStyled = styled.div`
         outline-color: ${colors.neutral['500']};
         padding: 15px 24px;
         width: 100%;
+
+        &:invalid {
+          border: 1px solid red;
+        }
       }
 
       .submit {
