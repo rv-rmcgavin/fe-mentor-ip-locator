@@ -65,10 +65,6 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Active states
 - validate data for either ip address or domain to be accepted.
 
-TODO:
-- Clean up the code quite a bit. Create hooks for the components that needs their functionality separated out.
-- I want to generate some sort of auto docs since I have TS. What can it do?
-
 ### Built with
 
 - Semantic HTML5 markup
@@ -99,7 +95,9 @@ While this pattern works, I hate it. I want to look in to better ways to solve t
 
 ### Continued development
 
-I'm thinking I might try Svelte. Start with some of the easier projects on [frontendmentor](https://frontendmentor.io) to get a feel for just writing in that style.
+- Clean up the code quite a bit. Create hooks for the components that needs their functionality separated out.
+- Update to not auto populate the search bar with the user IP, and add placeholder text that you can search by domain or IP.
+- Add an error message above input if validation failed and disable button.
 
 ### Useful resources
 

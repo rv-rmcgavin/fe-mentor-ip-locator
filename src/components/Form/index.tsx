@@ -58,8 +58,8 @@ const Form = ({ setIpData, setCoords }: {
     reset();
   };
 
-  // handleRequest will send a `GET` request with with ipAddress as a paramater to get
-  // geolocation data for that IP.
+  // handleRequest will send a `GET` request with with ipAddress/domain as a paramater to get
+  // geolocation data.
   const handleRequest = useCallback(async () => {
     try {
       const response: AxiosResponse<any> = await axios.get(url);
