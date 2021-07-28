@@ -15,6 +15,7 @@ const Form = ({ setIpData, setCoords }: {
   const [ipAddress, setIpAddress] = useState('');
   const [domain, setDomain] = useState('');
   const [shouldSendRequest, setShouldSendRequest] = useState(false);
+  const [formError, setFormError] = useState(false);
   const API_KEY: string | undefined = process.env.NEXT_PUBLIC_IPIFY_API_KEY;
   const BASE_URL: string = `https://geo.ipify.org/api/v1?apiKey=${API_KEY}`;
   let url: string = '';
@@ -51,10 +52,12 @@ const Form = ({ setIpData, setCoords }: {
 
   const isFormValid = (): void => {
     if (!formValue.match(IP_REGEX) && !formValue.match(DOMAIN_REGEX)) {
+      setFormError(true);
       console.error('form invalid'); // eslint-disable-line no-console
       console.log(formValue); // eslint-disable-line no-console
       return;
     }
+    if (formError) setFormError(false);
     reset();
   };
 
@@ -85,7 +88,6 @@ const Form = ({ setIpData, setCoords }: {
           value: isp,
         },
       ];
-      setFormValue(ip);
       setIpData(displayData);
       setCoords([lat, lng]);
     } catch (error) {
@@ -108,12 +110,17 @@ const Form = ({ setIpData, setCoords }: {
   }, [on, handleRequest]);
 
   return (
-    <FormStyled>
-      <input type="text" className="ip-input" value={formValue} onChange={(e) => handleFormInput(e)} />
-      <button type="button" className="submit" onClick={() => isFormValid()}>
-        {/* // TODO: Make this SVG a react component. You know you want to. */}
-        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
-      </button>
+    <FormStyled error={formError}>
+      {formError && (
+        <div className="error">Please enter a valid IP address or domain</div>
+      )}
+      <div className="input-container">
+        <input type="text" className="ip-input" value={formValue} onChange={(e) => handleFormInput(e)} placeholder="Search for any IP address or domain" />
+        <button type="button" className="submit" onClick={() => isFormValid()}>
+          {/* // TODO: Make this SVG a react component. You know you want to. */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
+        </button>
+      </div>
     </FormStyled>
   );
 };

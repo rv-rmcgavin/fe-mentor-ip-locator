@@ -10,6 +10,7 @@ const theme: DefaultTheme = {
     black: 'hsl(0, 0%, 0%)',
     blackActive: 'hsl(0, 0%, 25%)',
     white: 'hsl(0, 0%, 100%)',
+    error: 'hsl(4, 90%, 58%)',
   },
   breakpoint: '(min-width: 900px)',
 };

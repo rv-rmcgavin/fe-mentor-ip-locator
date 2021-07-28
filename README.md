@@ -31,19 +31,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
+![](./screenshot.png)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://github.com/rv-rmcgavin/fe-mentor-ip-locator](https://github.com/rv-rmcgavin/fe-mentor-ip-locator)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -64,6 +55,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Desktop styles
 - Active states
 - validate data for either ip address or domain to be accepted.
+- Update to not auto populate the search bar with the user IP, and add placeholder text that you can search by domain or IP.
+- Add an error message above input if validation failed and disable button.
+
 
 ### Built with
 
@@ -88,16 +82,11 @@ const Map = dynamic(
 ```
 In [/src/components/Form/index.tsx](./src/components/Form/index.tsx), I used a pattern I've had to implement a couple times before. Basically this pattern develops out of a need to perform certain state updates, and ensure that those state updates are complete before running the next function. In my experience, it also seems common to creep up when you are updating data relied upon to make an API call. 
 
-Basically, it's a callback pattern, but at the end of it, the function to make the API call is declared later than you want to use it. What I've done in the past, and what I did here was set up a `useEffect()` that would run the API call at the end of the "callback chain" based on updating a boolean piece of state set up just to control whether this api call is made or not. 
-
-While this pattern works, I hate it. I want to look in to better ways to solve this.
-
+Basically, not all the state I need to make an API call is updated before I all it. Ultimately, I solved this with a `useEffect()`, but it resulted in kind of an ugly pattern that I was not a fan of. I'd like to explore in the future other ways of solving this. `useReducer()` has been mentioned as being helpful in avoiding these issues. 
 
 ### Continued development
 
 - Clean up the code quite a bit. Create hooks for the components that needs their functionality separated out.
-- Update to not auto populate the search bar with the user IP, and add placeholder text that you can search by domain or IP.
-- Add an error message above input if validation failed and disable button.
 
 ### Useful resources
 
@@ -107,9 +96,3 @@ While this pattern works, I hate it. I want to look in to better ways to solve t
 - Website - [Rick McGavin](https://rickmcgavin.github.io)
 - Frontend Mentor - [@rickMcGavin](https://www.frontendmentor.io/profile/rickMcGavin)
 - Twitter - [@rickmcgavin](https://www.twitter.com/rickmcgavin)
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

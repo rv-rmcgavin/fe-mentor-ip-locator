@@ -12,6 +12,7 @@ interface Colors {
   black: string;
   blackActive: string;
   white: string;
+  error: string;
 }
 
 // and extend them!
